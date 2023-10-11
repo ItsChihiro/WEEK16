@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма</title>
+    <link rel="stylesheet" href="./class.css">
+</head>
+
+
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <h2>Форма</h2>
+            <form name="form" class="form" novalidate>
+                <div class="form__item">
+                    <label for="firstName" class="form__label">Имя*:</label>
+                    <input type="text" id="firstName" name="firstName" class="form__input _req" required minlength="2"
+                        maxlength="20" placeholder="Ваше имя" />
+                    <span id="firstName-error" class="error-text"></span>
+                </div>
+
+                <div class="form__item">
+                    <label for="email" class="form__label">Email*:</label>
+                    <input type="email" id="email" name="email" class="form__input _req" required
+                        placeholder="Ваш электронный адрес" />
+                    <span id="email-error" class="error-text"></span>
+                </div>
+
+
+                <div class="form__item">
+                    <label for="age" class="form__label">Возраст*:</label>
+                    <input type="text" id="age" name="age" class="form__input _req" required
+                        placeholder="Ваш возраст" />
+                    <span id="age-error" class="error-text"></span>
+                </div>
+
+
+                <div class="form__item">
+                    <label for="gender" class="form__label">Выберите ваш пол:</label>
+                    <input type="radio" name="gender" value="Женский" class="form__check" />
+                    <span>Женский</span>
+
+                    <input type="radio" name="gender" value="Мужской" class="form__check" />
+                    <span>Мужской</span>
+                </div>
+
+
+
+                <div class="form__item">
+                    <label for="profession" class="form__label">Выберите опцию*:</label>
+                    <select id="profession" name="profession" class="form__select _req" required>
+                        <option selected disabled value="">Выбрать</option>
+                        <option value="Врач">Врач</option>
+                        <option value="Программист">Программист</option>
+                        <option value="Учитель">Учитель</option>
+                        <option value="Дизайнер">Дизайнер</option>
+                        <option value="Инженер">Инженер</option>
+                        <option value="Продавец">Продавец</option>
+                        <option value="Другое">Другое</option>
+                    </select>
+                    <span id="profession-error" class="error-text"></span>
+                </div>
+
+
+                <div class="form__item">
+                    <label for="password" class="form__label">Пароль*:</label>
+                    <input type="text" id="password" name="password" class="form__input _req" required minlength="8"
+                        placeholder="Ваш пароль"
+                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,20}$" />
+                    <span id="password-error" class="error-text"></span>
+                </div>
+
+
+                <div class="form__item">
+                    <label for="passwordRepeat" class="form__label">Повторите пароль*:</label>
+                    <input type="text" id="passwordRepeat" name="passwordRepeat" class="form__input _req" required
+                        minlength="8" placeholder="Ваш пароль"
+                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()])[A-Za-z\d!@#$%^&*()]{8,20}$" />
+                    <span id="passwordRepeat-error" class="error-text"></span>
+                </div>
+
+
+                <div class="form__item">
+                    <input type="checkbox" id="checkbox" name="checkbox" class="form__checkbox _req" required checked />
+                    <label for="checkbox">Согласие на обработку персональных данных</label>
+                    <br>
+                    <span id="checkbox-error" class="error-text"></span>
+                </div>
+
+
+                <div class="errorsInfo"></div>
+
+                <input name="secondButton" type="submit" value="Отправить" class="form__submit" />
+            </form>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
